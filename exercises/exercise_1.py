@@ -24,8 +24,8 @@ Y = df.values[:, -1]
 
 # declare the model 
 model = tf.keras.models.Sequential([
-  tf.keras.layers.Dense(?, activation=?),
-  tf.keras.layers.Dense(?, activation=?)
+  tf.keras.layers.Dense(3, activation='relu'),
+  tf.keras.layers.Dense(1, activation='sigmoid')
 ])
 
 loss_fn = tf.keras.losses.MeanSquaredError()
@@ -36,7 +36,7 @@ model.compile(optimizer='adam',
               metrics=['accuracy'])
 
 # fit the model
-model.fit(?, ?, epochs=?, batch_size=?)
+model.fit(X, Y, epochs=100, batch_size=32)
 
 
 # evaluate the model
